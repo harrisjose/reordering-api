@@ -1,0 +1,72 @@
+body{
+  padding: 50px;
+  font-family: "Roboto", sans-serif;
+  color: #2c3e50;
+}
+h1,h2,h3,h4,h5,h6{
+  color: #7f8c8d;
+  font-weight: 300;
+
+}
+.centered {
+  text-align: center;
+}
+.dabba {
+  border-left: 0.3rem solid #2c3e50;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 1rem 1.5rem;
+  background: #ecf0f1;
+}
+.dabba *:last-child {
+      margin: 0;
+}
+#output {
+  display: none;
+}
+a {
+  color: #00B7FF;
+}
+#loading{
+  display: none;
+}
+.spinner {
+  width: 40px;
+  height: 40px;
+
+  position: relative;
+  margin: 100px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}

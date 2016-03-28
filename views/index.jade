@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  section.u-full-width
+    h4.centered= title
+    form#starter
+      textarea.u-full-width#input_text(style='height: 200px;',placeholder='Type here..', rows='20')
+      input.u-pull-left.button(type='button', value='Clear', onClick='javascript:eraseText()')
+      input.u-pull-right.button-primary(type='button', value='Reorder', onClick='javascript:processText()')
+  div#loading.spinner
+    div.double-bounce1
+    div.double-bounce2
+  div#output.u-full-width.u-cf
+    h6 Input Text
+      p.dabba#ip_block
+    h6 Reordered Text
+      p.dabba#op_block
