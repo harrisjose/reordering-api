@@ -16,10 +16,6 @@ router.post('/', jsonParser, function (req, res, next) {
     return res.sendStatus(400)
   }
   reorder(req.body.input, function (data) {
-    var text = ''
-    for (var i = 0; i < data.length; i++) {
-      text += data[i]
-    }
     res.end(JSON.stringify(data))
   })
 })
