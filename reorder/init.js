@@ -3,10 +3,11 @@ module.exports = function (input, callback) {
   var tree = require('../reorder/tree')
   var parser = require('../reorder/stanford/parse')
   var transform = require('../reorder/transform')
+  var fname = new Date().getTime() + '.txt'
 
-  fs.writeFileSync('./reorder/stanford/input.txt', String(input), 'utf8')
+  fs.writeFileSync('./reorder/stanford/' + fname, String(input), 'utf8')
 
-  parser('./reorder/stanford/input.txt', function (data) {
+  parser('./reorder/stanford/' + fname, function (data) {
     var flat = []
     var jsTree = []
     var reordered = []
@@ -19,6 +20,7 @@ module.exports = function (input, callback) {
     for (i = 0; i < jsTree.length; i++) {
       reordered.push(transform.tree(jsTree[i]))
     }
+    fs.unlinkSync('./reorder/stanford/' + fname)
     callback(reordered)
   })
 }
