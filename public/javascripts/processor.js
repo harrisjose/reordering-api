@@ -2,6 +2,12 @@ function eraseText () {
   document.getElementById('input_text').value = ''
 }
 
+function reload () {
+  eraseText()
+  document.getElementById('output').style.display = 'none'
+  document.getElementById('starter').style.display = 'block'
+}
+
 function processText () {
   var input = document.getElementById('input_text').value
   document.getElementById('ip_block').textContent = input
